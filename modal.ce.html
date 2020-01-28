@@ -1,0 +1,11 @@
+<transition name="modal" v-if="showModal">
+    <div class="fixed z-50 inset-0" style="background-color: rgba(0,0,0,.5)">
+        <div class="h-full w-2/3 m-auto flex flex-wrap content-center">
+            <div class="w-full h-auto rounded bg-white">
+                <slot></slot>
+            </div>
+        </div>
+
+    </div>
+</transition>
+

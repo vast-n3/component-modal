@@ -1,0 +1,56 @@
+<div class="container mx-auto md:w-2/3 py-4">
+    <div class="my-4 flex flex-wrap ">
+        <div class="w-full  px-4">
+            <h2 id="register-headline" class="text-4xl text-teal-700">Modal</h2>
+            <code class="bg-gray-800 text-white p-2">&ltmodal name="demo-modal">[modal-html]&lt/modal></code>
+            <p class="my-4 text-gray-700">
+                <button @click="$emit('toggleModal','demo-modal')">toggle modal</button>
+            </p>
+
+        </div>
+        <div class="w-full md:w-1/3 flex md:px-0 px-4">
+
+            <modal name="demo-modal">
+                <div class="p-4 bg-primary text-white">
+                    This is a modal
+                </div>
+                <div class="p-4">
+                    <h2 class="text-4xl text-teal-700">Modal</h2>
+                    <code class="bg-gray-800 text-white p-2">&ltmodal name="[name]">[modal-html]&lt/modal></code>
+                    <p class="my-4 text-gray-700">
+                        The modal is intentionally designed to work within components. It can be toggled using
+                        <code>this.$root.$emit('toggleModal','[name]')</code> within a component, or directly from HTML
+                        (e.g. <code>&ltbutton @click="$emit('toggleModal','[name]')"></code>)
+                    </p>
+                    <table class="table-auto border border-collapse">
+                        <tr>
+                            <th class="px-4 py-2">Prop</th>
+                            <th class="px-4 py-2">Function</th>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border">name (required)</td>
+                            <td class="p-2 border">Needed to trigger distinct modal.</td>
+                        </tr>
+
+                    </table>
+                    <table class=" mt-4 table-auto border border-collapse">
+                        <tr>
+                            <th class="px-4 py-2">Slot</th>
+                            <th class="px-4 py-2">Function</th>
+                        </tr>
+                        <tr>
+                            <td class="p-2 border">general HTML content</td>
+                            <td class="p-2 border">Represents the complete content of the modal to provide maximum flexibility.</td>
+                        </tr>
+
+                    </table>
+                    <p class="my-4 text-gray-700">
+                        TIP: create a method in your component to conveniently toggle a particular modal.
+                    </p>
+                    <button class="bg-danger text-white" @click="$emit('toggleModal', 'demo-modal')">close</button>
+                </div>
+            </modal>
+
+        </div>
+    </div>
+</div>
